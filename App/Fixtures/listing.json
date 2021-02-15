@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "name": "Henry Scott",
+    "member": "Century 21 BSD",
+    "profile_pic": "https://i.ibb.co/6NNKzxt/profile-rounded.png",
+    "image": "https://i.ibb.co/9V7Kmw3/product.png",
+    "title": "Nava Park BSD City",
+    "price": 6500000000,
+    "product_type": "Rumah",
+    "offer_type": "Dijual",
+    "paid_rent": null,
+    "address": "Jl. Edutown Kav III.1, BSD, Tangerang Selatan",
+    "bed": "3+1",
+    "bath": "3+1",
+    "area": 300,
+    "commission": null,
+    "marked": null,
+    "private": false
+  }, {
+    "id": 2,
+    "name": "Henry Scott",
+    "member": "Century 21 BSD",
+    "profile_pic": "https://i.ibb.co/6NNKzxt/profile-rounded.png",
+    "image": "https://i.ibb.co/mcbfLK6/Bitmap-2x.png",
+    "title": "Woody Residence Foresta",
+    "price": 10000000,
+    "product_type": "Apartemen",
+    "offer_type": "Disewa",
+    "paid_rent": "Bulan",
+    "address": "Jl. Edutown Kav III.1, BSD, Tangerang Selatan",
+    "bed": "4",
+    "bath": "4",
+    "area": 275,
+    "commission": null,
+    "marked": null,
+    "private": true
+  }
+]

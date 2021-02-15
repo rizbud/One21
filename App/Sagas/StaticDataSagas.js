@@ -11,3 +11,33 @@ export function * getRoot (api, action) {
     yield put(StaticDataActions.getRootFailure(response))
   }
 }
+
+export function * getListing (api) {
+  const response = yield call(api.getListing)
+
+  if (response.ok) {
+    yield put(StaticDataActions.getListingSuccess(response.data))
+  } else {
+    yield put(StaticDataActions.getListingFailure(response))
+  }
+}
+
+export function * getFavorite (api) {
+  const response = yield call(api.getFavorite)
+
+  if (response.ok) {
+    yield put(StaticDataActions.getFavoriteSuccess(response.data))
+  } else {
+    yield put(StaticDataActions.getFavoriteFailure(response))
+  }
+}
+
+export function * getArchive (api) {
+  const response = yield call(api.getArchive)
+
+  if (response.ok) {
+    yield put(StaticDataActions.getArchiveSuccess(response.data))
+  } else {
+    yield put(StaticDataActions.getArchiveFailure(response))
+  }
+}

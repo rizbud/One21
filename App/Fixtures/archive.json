@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "name": "Henry Scott",
+    "member": "Century 21 BSD",
+    "profile_pic": "https://i.ibb.co/6NNKzxt/profile-rounded.png",
+    "image": "https://i.ibb.co/2q7g5Ym/Bitmap-2x.png",
+    "title": "B Residence BSD Signature Lotus …",
+    "price": 4000000,
+    "product_type": "Apartemen",
+    "offer_type": "Disewa",
+    "paid_rent": "Bulan",
+    "address": "Jl. Edutown Kav III.1, BSD, Tangerang Selatan",
+    "bed": "2",
+    "bath": "2",
+    "area": 50,
+    "commission": "2%",
+    "marked": "TERSEWA",
+    "private": true
+  }, {
+    "id": 2,
+    "name": "Henry Scott",
+    "member": "Century 21 BSD",
+    "profile_pic": "https://i.ibb.co/6NNKzxt/profile-rounded.png",
+    "image": "https://i.ibb.co/zf1QH1w/Bitmap-1-2x.png",
+    "title": "Foresta Ultimo BSD City",
+    "price": 2500000000,
+    "product_type": "Rumah",
+    "offer_type": "Dijual",
+    "paid_rent": null,
+    "address": "Jl. Edutown Kav III.1, BSD, Tangerang Selatan",
+    "bed": "4",
+    "bath": "4",
+    "area": 275,
+    "commission": null,
+    "marked": "TERJUAL",
+    "private": false
+  }
+]

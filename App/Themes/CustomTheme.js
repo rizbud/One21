@@ -16,6 +16,7 @@ export default {
   "gold": '#BEAF87',
   "black": '#242426',
   "gray": '#838383',
+  "teal": '#71C392',
 
   // border color
   "border-gold": { borderColor: '#BEAF87' },
@@ -28,6 +29,7 @@ export default {
   // background color
   "bg-gold": { backgroundColor: '#BEAF87' },
   "bg-white-85": { backgroundColor: 'rgba(255, 255, 255, 0.85)' },
+  "bg-teal": { backgroundColor: '#71C392' },
 
   // text color
   "text-black": { color: '#242426' },

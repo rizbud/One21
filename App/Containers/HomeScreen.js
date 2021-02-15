@@ -1,7 +1,8 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
 import { connect } from 'react-redux'
 import {
   TouchableOpacity,
+  RefreshControl,
   StatusBar,
   FlatList,
   Text,
@@ -11,6 +12,8 @@ import SafeAreaView from 'react-native-safe-area-view'
 import Icon from 'react-native-vector-icons/Feather'
 import Image from 'react-native-fast-image'
 import ViewPager from '@react-native-community/viewpager'
+
+import StaticDataActions from '../Redux/StaticDataRedux'
 
 // Components
 import ListingCard from '../Components/ListingCard'
@@ -22,8 +25,32 @@ import styles from './Styles/HomeScreenStyle'
 import { apply } from '../Themes/OsmiProvider'
 
 const HomeScreen = props => {
+  const { listing, favorite, archive } = props
   const viewPager = useRef()
   const [page, setPage] = useState(0)
+
+  useEffect(() => {
+    props.getListing()
+    props.getFavorite()
+    props.getArchive()
+  }, [])
+
+  const refresh = useCallback(() => {
+    props.getListing()
+    props.getFavorite()
+    props.getArchive()
+  }, [])
+
+  const List = useCallback((props) => (
+    <FlatList
+      showsVerticalScrollIndicator={false}
+      refreshControl={<RefreshControl refreshing={false} onRefresh={refresh} />}
+      data={props.data}
+      keyExtractor={item => item?.id?.toString()}
+      renderItem={({ item }) => <ListingCard item={item} />}
+      contentContainerStyle={apply('pt-5 bg-gray-100')}
+    />
+  ), [listing])
 
   return (
     <SafeAreaView style={styles.container}>
@@ -75,31 +102,13 @@ const HomeScreen = props => {
       initialPage={0}
       onPageSelected={e => setPage(e.nativeEvent.position)}>
         <View key='1' style={apply('flex')}>
-          <FlatList
-            showsVerticalScrollIndicator={false}
-            data={[1, 2]}
-            keyExtractor={item => item.toString()}
-            renderItem={() => <ListingCard />}
-            contentContainerStyle={apply('py-3')}
-          />
+          <List data={!listing?.fetching ? listing?.data : []} />
         </View>
         <View key='2' style={apply('flex')}>
-          <FlatList
-            showsVerticalScrollIndicator={false}
-            data={[1, 2]}
-            keyExtractor={item => item.toString()}
-            renderItem={() => <ListingCard />}
-            contentContainerStyle={apply('py-3')}
-          />
+          <List data={!favorite?.fetching ? favorite?.data : []} />
         </View>
         <View key='3' style={apply('flex')}>
-          <FlatList
-            showsVerticalScrollIndicator={false}
-            data={[1, 2]}
-            keyExtractor={item => item.toString()}
-            renderItem={() => <ListingCard />}
-            contentContainerStyle={apply('py-3')}
-          />
+          <List data={!archive?.fetching ? archive?.data : []} />
         </View>
       </ViewPager>
     </SafeAreaView>
@@ -107,11 +116,15 @@ const HomeScreen = props => {
 }
 
 const mapStateToProps = state => ({
-
+  listing: state.staticData.listing,
+  favorite: state.staticData.favorite,
+  archive: state.staticData.archive,
 })
 
 const mapDispatchToProps = dispatch => ({
-
+  getListing: () => dispatch(StaticDataActions.getListingRequest()),
+  getFavorite: () => dispatch(StaticDataActions.getFavoriteRequest()),
+  getArchive: () => dispatch(StaticDataActions.getArchiveRequest()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)

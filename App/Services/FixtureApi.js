@@ -20,5 +20,24 @@ export default {
       ok: true,
       data: username.toLowerCase() === 'gantman' ? gantmanData : skellockData
     }
-  }
+  },
+
+  getListing: () => {
+    return {
+      ok: true,
+      data: require('../Fixtures/listing.json')
+    }
+  },
+  getFavorite: () => {
+    return {
+      ok: true,
+      data: require('../Fixtures/favorite.json')
+    }
+  },
+  getArchive: () => {
+    return {
+      ok: true,
+      data: require('../Fixtures/archive.json')
+    }
+  },
 }

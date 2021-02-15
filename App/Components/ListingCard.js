@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import {
   TouchableOpacity,
   View,
@@ -17,6 +17,7 @@ import { apply } from '../Themes/OsmiProvider'
 
 const ListingCard = props => {
   const navigation = useNavigation()
+  const { item } = props
 
   return (
     <TouchableOpacity
@@ -25,38 +26,47 @@ const ListingCard = props => {
     style={styles.card}>
       <View style={styles.header}>
         <View style={styles.profilePic}>
-          <Image source={Images.profileRounded1} style={apply('w-40 h-40')} />
+          <Image source={{ uri: item?.profile_pic }} style={apply('w-40 h-40 bg-gray')} />
         </View>
         <View style={styles.user}>
-          <Text style={styles.name}>Henry Scott</Text>
-          <Text style={styles.member}>Century 21 BSD City</Text>
+          <Text style={styles.name}>{item?.name}</Text>
+          <Text style={styles.member}>{item?.member}</Text>
         </View>
         <Icon name='ellipsis-vertical' size={20} />
       </View>
 
       <View style={styles.image}>
-        <Image source={Images.product} style={styles.image} />
-        <View style={styles.commission}>
-          <Text style={styles.comText}>Komisi</Text>
-          <Text style={styles.percent}>2%</Text>
-        </View>
-        <View style={styles.mark}>
-          <View style={styles.marked}>
-            <Text style={styles.markLabel}>TERJUAL</Text>
+        <Image source={{ uri: item?.image }} style={styles.image} />
+        {item?.commission && (
+          <View style={styles.commission}>
+            <Text style={styles.comText}>Komisi</Text>
+            <Text style={styles.percent}>{item?.commission}</Text>
           </View>
-        </View>
+        )}
+        {item?.marked && (
+          <View style={styles.mark}>
+            <View style={styles.marked}>
+              <Text style={styles.markLabel}>{item?.marked}</Text>
+            </View>
+          </View>
+        )}
       </View>
 
       <View style={styles.summary}>
-        <Text style={styles.title}>Nava Park BSD City</Text>
-        <Text style={styles.price}>Rp {(6500000000).toLocaleString('id')}</Text>
+        <View style={styles.row}>
+          <Text style={styles.title}>{item?.title}</Text>
+          {item?.private && <Text style={styles.private}>PRIVATE</Text>}
+        </View>
+        <Text style={styles.price}>
+          Rp {item?.price?.toLocaleString('id')}{item?.paid_rent && '/' + item?.paid_rent}
+        </Text>
         <View style={[styles.row, apply('mb-1')]}>
-          <Text style={styles.productType}>Rumah</Text>
-          <Text style={styles.offerType}>Dijual</Text>
+          <Text style={styles.productType}>{item?.product_type}</Text>
+          <Text style={[styles.offerType, item?.offer_type === 'Disewa' && apply('bg-teal')]}>{item?.offer_type}</Text>
         </View>
         <View style={styles.row}>
           <Icon name='location-outline' size={16} color={apply('gray')} />
-          <Text numberOfLines={2} style={styles.address}>Jl. Edutown Kav III.1, BSD, Tangerang Selatan</Text>
+          <Text numberOfLines={2} style={styles.address}>{item?.address}</Text>
         </View>
       </View>
 
@@ -64,21 +74,21 @@ const ListingCard = props => {
         <View style={apply('flex border-r mx-1 border-gray')}>
           <View style={styles.row}>
             <Image source={Images.bed} style={apply('w-21 h-19')} resizeMode='stretch' />
-            <Text style={styles.specLabel}>3+1</Text>
+            <Text style={styles.specLabel}>{item?.bed}</Text>
           </View>
           <Text style={styles.specInfo}>K. Tidur</Text>
         </View>
         <View style={apply('flex border-r mx-1 border-gray')}>
           <View style={styles.row}>
             <Image source={Images.bath} style={apply('w-21 h-19')} resizeMode='stretch' />
-            <Text style={styles.specLabel}>3+1</Text>
+            <Text style={styles.specLabel}>{item?.bath}</Text>
           </View>
           <Text style={styles.specInfo}>K. Mandi</Text>
         </View>
         <View style={apply('flex mx-1')}>
           <View style={styles.row}>
             <Image source={Images.area} style={apply('w-21 h-19')} resizeMode='stretch' />
-            <Text style={styles.specLabel}>300<Text style={apply('text-xs')}>M</Text></Text>
+            <Text style={styles.specLabel}>{item?.area}<Text style={apply('text-xs')}>M</Text></Text>
           </View>
           <Text style={styles.specInfo}>L. Tanah</Text>
         </View>
@@ -87,15 +97,14 @@ const ListingCard = props => {
   )
 }
 
-// // Prop type warnings
-// ListingCard.propTypes = {
-//   someProperty: PropTypes.object,
-//   someSetting: PropTypes.bool.isRequired,
-// }
-//
-// // Defaults for props
-// ListingCard.defaultProps = {
-//   someSetting: false
-// }
+// Prop type warnings
+ListingCard.propTypes = {
+  item: PropTypes.object.isRequired,
+}
+
+// Defaults for props
+ListingCard.defaultProps = {
+  item: false
+}
 
 export default memo(ListingCard)

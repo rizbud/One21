@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "name": "Andrea Collins",
+    "member": "Century 21 BSD",
+    "profile_pic": "https://i.ibb.co/yymTjK6/59b6c4bfba785e36f932a317-2x.png",
+    "image": "https://i.ibb.co/nbqbz7x/Bitmap-2x.png",
+    "title": "B Residence BSD Signature Lotus …",
+    "price": 2500000000,
+    "product_type": "Rumah",
+    "offer_type": "Dijual",
+    "paid_rent": null,
+    "address": "Jl. Edutown Kav III.1, BSD, Tangerang Selatan",
+    "bed": "3+1",
+    "bath": "2+1",
+    "area": 118,
+    "commission": null,
+    "marked": null,
+    "private": false
+  }, {
+    "id": 2,
+    "name": "Stewart Vale",
+    "member": "Century 21 Breeze",
+    "profile_pic": "https://i.ibb.co/CQV2vDR/approachable-professional-headshots-1-2x.png",
+    "image": "https://i.ibb.co/1Z9DctN/Bitmap-1-2x.png",
+    "title": "The Branz Apartment BSD City",
+    "price": 2250000000,
+    "product_type": "Rumah",
+    "offer_type": "Dijual",
+    "paid_rent": null,
+    "address": "Jl. Edutown Kav III.1, BSD, Tangerang Selatan",
+    "bed": "3+1",
+    "bath": "2+1",
+    "area": 85,
+    "commission": null,
+    "marked": null,
+    "private": false
+  }
+]
