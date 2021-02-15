@@ -1,19 +1,107 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { connect } from 'react-redux'
-import { StatusBar, Text } from 'react-native'
+import {
+  TouchableOpacity,
+  StatusBar,
+  FlatList,
+  Text,
+  View
+} from 'react-native'
 import SafeAreaView from 'react-native-safe-area-view'
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Feather'
+import Image from 'react-native-fast-image'
+import ViewPager from '@react-native-community/viewpager'
+
+// Components
+import ListingCard from '../Components/ListingCard'
+
+import Images from '../Images'
 
 // Styles
 import styles from './Styles/HomeScreenStyle'
 import { apply } from '../Themes/OsmiProvider'
 
 const HomeScreen = props => {
+  const viewPager = useRef()
+  const [page, setPage] = useState(0)
+
   return (
-    <SafeAreaView style={apply("flex justify-center items-center")}>
+    <SafeAreaView style={styles.container}>
       <StatusBar barStyle='dark-content' backgroundColor={apply('white')} />
-      <Icon name='earth' size={80} style={apply('mb-3')} />
-      <Text style={apply("text-lg text-black")}>Hello World!</Text>
+      <View style={styles.head}>
+        <TouchableOpacity activeOpacity={0.9} style={styles.back}>
+          <Icon name='arrow-left' size={25} />
+        </TouchableOpacity>
+        <View style={styles.profile}>
+          <View style={styles.profilePic}>
+            <Image source={Images.profileRounded1} style={apply('w-64 h-64')} />
+          </View>
+          <Text style={styles.name}>Henry Scott</Text>
+          <Text style={styles.member}>Member Broker Century 21 BSD City</Text>
+        </View>
+        <View style={styles.tabHeaderWrapper}>
+          <TouchableOpacity
+          onPress={() => viewPager.current.setPage(0)}
+          activeOpacity={0.9}
+          style={[
+            styles.tabHeader,
+            page === 0 && apply('border-gold')
+          ]}>
+            <Text style={[styles.textHeader, page === 0 && apply('text-gold')]}>Listing</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+          onPress={() => viewPager.current.setPage(1)}
+          activeOpacity={0.9}
+          style={[
+            styles.tabHeader,
+            page === 1 && apply('border-gold')
+          ]}>
+            <Text style={[styles.textHeader, page === 1 && apply('text-gold')]}>Favorite</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+          onPress={() => viewPager.current.setPage(2)}
+          activeOpacity={0.9}
+          style={[
+            styles.tabHeader,
+            page === 2 && apply('border-gold')
+          ]}>
+            <Text style={[styles.textHeader, page === 2 && apply('text-gold')]}>Arsip</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <ViewPager
+      ref={viewPager}
+      style={apply('flex w/100')}
+      initialPage={0}
+      onPageSelected={e => setPage(e.nativeEvent.position)}>
+        <View key='1' style={apply('flex')}>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={[1, 2]}
+            keyExtractor={item => item.toString()}
+            renderItem={() => <ListingCard />}
+            contentContainerStyle={apply('py-3')}
+          />
+        </View>
+        <View key='2' style={apply('flex')}>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={[1, 2]}
+            keyExtractor={item => item.toString()}
+            renderItem={() => <ListingCard />}
+            contentContainerStyle={apply('py-3')}
+          />
+        </View>
+        <View key='3' style={apply('flex')}>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={[1, 2]}
+            keyExtractor={item => item.toString()}
+            renderItem={() => <ListingCard />}
+            contentContainerStyle={apply('py-3')}
+          />
+        </View>
+      </ViewPager>
     </SafeAreaView>
   )
 }

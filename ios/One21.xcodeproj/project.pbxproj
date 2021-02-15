@@ -36,6 +36,12 @@
 		DFE5BAF829206EFFFB31F534 /* libPods-One21-One21Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 118559D8654582FA033171E6 /* libPods-One21-One21Tests.a */; };
 		E96A5E04AE054BACA01BF2C9 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 014A96408D634A9282DB9D8F /* Fontisto.ttf */; };
 		F0725962B8804ACA8F55C41B /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D363EC55231A4117AF5F133C /* FontAwesome5_Brands.ttf */; };
+		8D451023242941D28C8C793D /* AvenirNextLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 375B29E56BAF4C068E44AC9E /* AvenirNextLTPro-Bold.otf */; };
+		9EFD690927424A4F9104C71C /* AvenirNextLTPro-BoldCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF348C0013004D5C997F6155 /* AvenirNextLTPro-BoldCn.otf */; };
+		B7E3CA01018B493FBC67D655 /* AvenirNextLTPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = B07F0413D28C409A969E1436 /* AvenirNextLTPro-Demi.otf */; };
+		527D316AE74344EE95F01539 /* AvenirNextLTPro-DemiCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = 046E4623AD204CA8BB564620 /* AvenirNextLTPro-DemiCn.otf */; };
+		E2C62C74C01C48C683BF4329 /* AvenirNextLTPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = F33A9035778A4C26AD788CBE /* AvenirNextLTPro-It.otf */; };
+		F24CFD9EAD96408294DE7ED6 /* AvenirNextLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 92E731434E7449DEB3303D1D /* AvenirNextLTPro-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +105,12 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		ED52818CE1E7472F9E022D9D /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		F9B091DADB6F74224C4D2B42 /* Pods-One21-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One21-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-One21-tvOSTests/Pods-One21-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		375B29E56BAF4C068E44AC9E /* AvenirNextLTPro-Bold.otf */ = {isa = PBXFileReference; name = "AvenirNextLTPro-Bold.otf"; path = "../assets/fonts/AvenirNextLTPro-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BF348C0013004D5C997F6155 /* AvenirNextLTPro-BoldCn.otf */ = {isa = PBXFileReference; name = "AvenirNextLTPro-BoldCn.otf"; path = "../assets/fonts/AvenirNextLTPro-BoldCn.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B07F0413D28C409A969E1436 /* AvenirNextLTPro-Demi.otf */ = {isa = PBXFileReference; name = "AvenirNextLTPro-Demi.otf"; path = "../assets/fonts/AvenirNextLTPro-Demi.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		046E4623AD204CA8BB564620 /* AvenirNextLTPro-DemiCn.otf */ = {isa = PBXFileReference; name = "AvenirNextLTPro-DemiCn.otf"; path = "../assets/fonts/AvenirNextLTPro-DemiCn.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F33A9035778A4C26AD788CBE /* AvenirNextLTPro-It.otf */ = {isa = PBXFileReference; name = "AvenirNextLTPro-It.otf"; path = "../assets/fonts/AvenirNextLTPro-It.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		92E731434E7449DEB3303D1D /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; name = "AvenirNextLTPro-Regular.otf"; path = "../assets/fonts/AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +212,12 @@
 				C2E34190C8034DF78B465B83 /* Octicons.ttf */,
 				9061378089534D86B9E9F363 /* SimpleLineIcons.ttf */,
 				6B2C13C62C5C4DEBBDEAABC3 /* Zocial.ttf */,
+				375B29E56BAF4C068E44AC9E /* AvenirNextLTPro-Bold.otf */,
+				BF348C0013004D5C997F6155 /* AvenirNextLTPro-BoldCn.otf */,
+				B07F0413D28C409A969E1436 /* AvenirNextLTPro-Demi.otf */,
+				046E4623AD204CA8BB564620 /* AvenirNextLTPro-DemiCn.otf */,
+				F33A9035778A4C26AD788CBE /* AvenirNextLTPro-It.otf */,
+				92E731434E7449DEB3303D1D /* AvenirNextLTPro-Regular.otf */,
 			);
 			name = Resources;
 			path = "";
@@ -417,6 +435,12 @@
 				C6F3D5C3BFAB4F2AB1692F73 /* Octicons.ttf in Resources */,
 				A414F4065E7840118A732DA0 /* SimpleLineIcons.ttf in Resources */,
 				9D199652B7FF4B2AAE515BEB /* Zocial.ttf in Resources */,
+				8D451023242941D28C8C793D /* AvenirNextLTPro-Bold.otf in Resources */,
+				9EFD690927424A4F9104C71C /* AvenirNextLTPro-BoldCn.otf in Resources */,
+				B7E3CA01018B493FBC67D655 /* AvenirNextLTPro-Demi.otf in Resources */,
+				527D316AE74344EE95F01539 /* AvenirNextLTPro-DemiCn.otf in Resources */,
+				E2C62C74C01C48C683BF4329 /* AvenirNextLTPro-It.otf in Resources */,
+				F24CFD9EAD96408294DE7ED6 /* AvenirNextLTPro-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
