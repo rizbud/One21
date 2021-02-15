@@ -5,10 +5,10 @@ import SafeAreaView from 'react-native-safe-area-view'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 // Styles
-import styles from './Styles/WelcomeScreenStyle'
+import styles from './Styles/HomeScreenStyle'
 import { apply } from '../Themes/OsmiProvider'
 
-const WelcomeScreen = props => {
+const HomeScreen = props => {
   return (
     <SafeAreaView style={apply("flex justify-center items-center")}>
       <StatusBar barStyle='dark-content' backgroundColor={apply('white')} />
@@ -26,4 +26,4 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(WelcomeScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)

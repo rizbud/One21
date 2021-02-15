@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "531258430665",
+    "project_id": "one21-b88c3",
+    "storage_bucket": "one21-b88c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531258430665:android:e9690ee503edb196df6918",
+        "android_client_info": {
+          "package_name": "com.one21"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531258430665-venvpe9ovg8ngq94i47nq7vlbjo8ok6r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbAT6U74fzT8bC4EQ7NXMcXXaQlBV1ifs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531258430665-venvpe9ovg8ngq94i47nq7vlbjo8ok6r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
