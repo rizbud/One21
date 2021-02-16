@@ -13,7 +13,6 @@ import { apply } from '../Themes/OsmiProvider'
 
 const RootContainer = (props) => {
   useEffect(() => {
-    messaging().getToken().then(res => console.log(res))
     const unsubscribe = messaging().onMessage(async (remoteMessage) => {
       PushNotification.localNotification({
         message: remoteMessage.notification.body,
@@ -21,7 +20,6 @@ const RootContainer = (props) => {
         bigPictureUrl: remoteMessage.notification.android.imageUrl,
         smallIcon: remoteMessage.notification.android.imageUrl,
       })
-      console.log(remoteMessage)
     })
 
     return unsubscribe
