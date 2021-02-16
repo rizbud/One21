@@ -12,7 +12,7 @@ import styles from './Styles/ButtonStyle'
 import { apply } from '../Themes/OsmiProvider'
 
 const Button = props => {
-  const { ...restProps } = props
+  const { darkBg, ...restProps } = props
   const { style } = restProps
 
   return Platform.OS === 'ios' ? (
@@ -21,7 +21,7 @@ const Button = props => {
     </TouchableOpacity>
   ) : (
     <TouchableNativeFeedback
-    background={TouchableNativeFeedback.Ripple(apply('white-soft'))}
+    background={TouchableNativeFeedback.Ripple(apply(darkBg ? 'white' : 'white-soft'))}
     {...props}>
       <View style={style}>
         {props.children}
@@ -32,11 +32,13 @@ const Button = props => {
 
 Button.propTypes = {
   children: PropTypes.any,
+  darkBg: PropTypes.bool,
   style: PropTypes.object
 }
 
 Button.defaultProps = {
-  children: null
+  children: null,
+  darkBg: false,
 }
 
 export default memo(Button)

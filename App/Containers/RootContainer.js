@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { StatusBar } from 'react-native'
 import { connect } from 'react-redux'
+import messaging from '@react-native-firebase/messaging'
+import PushNotification from 'react-native-push-notification'
+
 import StartupActions from '../Redux/StartupRedux'
 import ReduxPersist from '../Config/ReduxPersist'
 import AppNavigation from '../Navigation/AppNavigation'
@@ -9,6 +12,21 @@ import AppNavigation from '../Navigation/AppNavigation'
 import { apply } from '../Themes/OsmiProvider'
 
 const RootContainer = (props) => {
+  useEffect(() => {
+    messaging().getToken().then(res => console.log(res))
+    const unsubscribe = messaging().onMessage(async (remoteMessage) => {
+      PushNotification.localNotification({
+        message: remoteMessage.notification.body,
+        title: remoteMessage.notification.title,
+        bigPictureUrl: remoteMessage.notification.android.imageUrl,
+        smallIcon: remoteMessage.notification.android.imageUrl,
+      })
+      console.log(remoteMessage)
+    })
+
+    return unsubscribe
+  }, [])
+
   useEffect(() => {
     if (!ReduxPersist.active) {
       props.startup()

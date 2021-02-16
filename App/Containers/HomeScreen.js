@@ -47,7 +47,7 @@ const HomeScreen = props => {
       refreshControl={<RefreshControl refreshing={false} onRefresh={refresh} />}
       data={props.data}
       keyExtractor={item => item?.id?.toString()}
-      renderItem={({ item }) => <ListingCard item={item} />}
+      renderItem={({ item }) => <ListingCard favorite={props.favorite} item={item} />}
       contentContainerStyle={apply('pt-5 bg-gray-100')}
     />
   ), [listing])
@@ -61,7 +61,10 @@ const HomeScreen = props => {
         </TouchableOpacity>
         <View style={styles.profile}>
           <View style={styles.profilePic}>
-            <Image source={Images.profileRounded1} style={apply('w-64 h-64')} />
+            <Image
+              source={{ uri: "https://i.ibb.co/6NNKzxt/profile-rounded.png" }}
+              style={apply('w-64 h-64 rounded-full')}
+            />
           </View>
           <Text style={styles.name}>Henry Scott</Text>
           <Text style={styles.member}>Member Broker Century 21 BSD City</Text>
@@ -105,7 +108,7 @@ const HomeScreen = props => {
           <List data={!listing?.fetching ? listing?.data : []} />
         </View>
         <View key='2' style={apply('flex')}>
-          <List data={!favorite?.fetching ? favorite?.data : []} />
+          <List favorite={true} data={!favorite?.fetching ? favorite?.data : []} />
         </View>
         <View key='3' style={apply('flex')}>
           <List data={!archive?.fetching ? archive?.data : []} />

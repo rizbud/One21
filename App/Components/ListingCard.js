@@ -10,6 +10,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 
 import Images from '../Images'
+import { formatMoney } from '../Lib/TextUtils'
 
 // Styles
 import styles from './Styles/ListingCardStyle'
@@ -22,17 +23,17 @@ const ListingCard = props => {
   return (
     <TouchableOpacity
     activeOpacity={0.9}
-    onPress={() => navigation.navigate('DetailScreen')}
+    onPress={() => navigation.navigate('DetailScreen', { item })}
     style={styles.card}>
       <View style={styles.header}>
         <View style={styles.profilePic}>
-          <Image source={{ uri: item?.profile_pic }} style={apply('w-40 h-40 bg-gray')} />
+          <Image source={{ uri: item?.profile_pic }} style={apply('w-40 h-40 bg-gray rounded-full')} />
         </View>
         <View style={styles.user}>
           <Text style={styles.name}>{item?.name}</Text>
           <Text style={styles.member}>{item?.member}</Text>
         </View>
-        <Icon name='ellipsis-vertical' size={20} />
+        {!props.favorite && <Icon name='ellipsis-vertical' size={20} />}
       </View>
 
       <View style={styles.image}>
@@ -58,7 +59,8 @@ const ListingCard = props => {
           {item?.private && <Text style={styles.private}>PRIVATE</Text>}
         </View>
         <Text style={styles.price}>
-          Rp {item?.price?.toLocaleString('id')}{item?.paid_rent && '/' + item?.paid_rent}
+          Rp {formatMoney(item?.price)}
+          <Text>{item?.paid_rent && '/' + item?.paid_rent}</Text>
         </Text>
         <View style={[styles.row, apply('mb-1')]}>
           <Text style={styles.productType}>{item?.product_type}</Text>
